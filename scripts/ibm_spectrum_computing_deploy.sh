@@ -354,7 +354,7 @@ fi
 #deploy product 
 if [ "$PRODUCT" == "symphony" ]
 then
-	SOURCE_PROFILE=/opt/ibm/spectrumcomputing/profile.platform
+	SOURCE_PROFILE=/opt/ibm/spectrumcomputing/de721/profile.platform
 	deploy_product
 elif [ "$PRODUCT" == "cws" -o "$PRODUCT" == "lsf" ]
 then
