@@ -102,10 +102,10 @@ function update_profile_d()
 			echo "[ -f /opt/lsf/conf/cshrc.lsf ] && source /opt/lsf/conf/cshrc.lsf" >> /etc/profile.d/spectrumcomputing.csh
 		elif [ "${ROLE}" == "symde" ]
 		then
-			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de72/profile.platform ] && source /opt/ibm/spectrumcomputing/symphonyde/de72/profile.platform" > /etc/profile.d/symphony.sh
-			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de72/profile.client ] && source /opt/ibm/spectrumcomputing/symphonyde/de72/profile.client" >> /etc/profile.d/symphony.sh
-			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de72/cshrc.platform ] && source /opt/ibm/spectrumcomputing/symphonyde/de72/cshrc.platform" > /etc/profile.d/symphony.csh
-			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de72/cshrc.client ] && source /opt/ibm/spectrumcomputing/symphonyde/de72/cshrc.client" >> /etc/profile.d/symphony.csh
+			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de721/profile.platform ] && source /opt/ibm/spectrumcomputing/symphonyde/de721/profile.platform" > /etc/profile.d/symphony.sh
+			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de721/profile.client ] && source /opt/ibm/spectrumcomputing/symphonyde/de721/profile.client" >> /etc/profile.d/symphony.sh
+			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de721/cshrc.platform ] && source /opt/ibm/spectrumcomputing/symphonyde/de721/cshrc.platform" > /etc/profile.d/symphony.csh
+			echo "[ -f /opt/ibm/spectrumcomputing/symphonyde/de721/cshrc.client ] && source /opt/ibm/spectrumcomputing/symphonyde/de721/cshrc.client" >> /etc/profile.d/symphony.csh
 		else
 			echo "nothing to update"
 		fi
@@ -270,7 +270,7 @@ function start_symphony()
 
 function configure_symphony()
 {
-	SOURCE_PROFILE=/opt/ibm/spectrumcomputing/de721/profile.platform
+	SOURCE_PROFILE=/opt/ibm/spectrumcomputing/symphonyde/de721
 	## currently only single master
 		# no failover
 	if [ "${ROLE}" == "master" ]
