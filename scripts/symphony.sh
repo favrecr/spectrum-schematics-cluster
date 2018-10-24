@@ -234,10 +234,10 @@ function install_symphony()
 			then
 				export EGOCOMPUTEHOST=Y
 			fi
-			if [ "$VERSION" == "latest" -o "$VERSION" = "7.2.0.0" -o "$VERSION" == "7.2.0.2" ]
+			if [ "$VERSION" == "latest" -o "$VERSION" = "7.2.1.0" -o "$VERSION" == "7.2.1.2" ]
 			then
-				LOG "\tsh /export/symphony/${VERSION}/sym-7.2.0.0_x86_64.bin --quiet"
-				sh /export/symphony/${VERSION}/sym-7.2.0.0_x86_64.bin --quiet
+				LOG "\tsh /export/symphony/${VERSION}/sym-7.2.1.0_x86_64.bin --quiet"
+				sh /export/symphony/${VERSION}/sym-7.2.1.0_x86_64.bin --quiet
 			elif [ "$VERSION" == "7.1.2" ]
 			then
 				LOG "\tsh /export/symphony/${VERSION}/sym-7.1.2.0_x86_64.bin --quiet"
