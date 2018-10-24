@@ -270,7 +270,7 @@ function start_symphony()
 
 function configure_symphony()
 {
-	SOURCE_PROFILE=/opt/ibm/spectrumcomputing/symphonyde/de721
+	SOURCE_PROFILE=/opt/ibm/spectrumcomputing/symphonyde/de721/profile.platform
 	## currently only single master
 		# no failover
 	if [ "${ROLE}" == "master" ]
