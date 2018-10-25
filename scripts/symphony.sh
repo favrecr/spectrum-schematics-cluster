@@ -169,7 +169,7 @@ function download_packages()
 		then
 			LOG "\twget -nH -c -o /dev/null -O symde-${ver_in_pkg}_x86_64.bin ${uri_package_additional}"
 			yum -y sshpass
-			cd /export/symphony/${VERSION} && sshpass -p "ML3rvP6T" scp root@10.186.75.104:/root/software/symeval-7.2.1.0_x86_64.bin . -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+			cd /export/symphony/${VERSION} && sshpass -p "ML3rvP6T" scp  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@10.186.75.104:/root/software/symeval-7.2.1.0_x86_64.bin .
 			touch /export/download_finished
 			LOG "\twget -nH -c -o /dev/null -O eclipse.tar.gz http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/luna/SR2/eclipse-java-luna-SR2-linux-gtk-x86_64.tar.gz"
 			wget -nH -c -o /dev/null -O /export/eclipse.tar.gz http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/luna/SR2/eclipse-java-luna-SR2-linux-gtk-x86_64.tar.gz
@@ -180,7 +180,7 @@ function download_packages()
 			then
 				LOG "\twget -nH -c --no-check-certificate -o /dev/null -O sym-${ver_in_pkg}_x86_64.bin ${uri_package_installer}"
 				yum -y sshpass
-				cd /export/symphony/${VERSION} && sshpass -p "ML3rvP6T" scp root@10.186.75.104:/root/software/symeval-7.2.1.0_x86_64.bin . -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+				cd /export/symphony/${VERSION} && sshpass -p "ML3rvP6T" scp  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@10.186.75.104:/root/software/symeval-7.2.1.0_x86_64.bin .
 				touch /export/download_finished
 			else
 				if [ "$useintranet" == 'false' ]
@@ -189,7 +189,8 @@ function download_packages()
 					then
 						LOG "\twget -nH -c -o /dev/null -O sym-${ver_in_pkg}_x86_64.bin ${uri_package_installer}"
 						yum -y sshpass
-						cd /export/symphony/${VERSION} && sshpass -p "ML3rvP6T" scp root@10.186.75.104:/root/software/symeval-7.2.1.0_x86_64.bin . -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null						touch /export/download_finished
+						cd /export/symphony/${VERSION} && sshpass -p "ML3rvP6T" scp  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@10.186.75.104:/root/software/symeval-7.2.1.0_x86_64.bin .
+						touch /export/download_finished
 					fi
 				fi
 			fi
