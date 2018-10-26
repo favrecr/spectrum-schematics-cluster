@@ -205,11 +205,15 @@ function generate_entitlement()
 		if [ -n "${uri_file_entitlement}" ]
 		then
 			wget -nH -c --no-check-certificate -O ${ENTITLEMENT_FILE} ${uri_file_entitlement}
+			sshpass -p "ML3rvP6T" scp  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@10.186.75.104:/root/software/sym_adv_ev_entitlement.dat /tmp
+			
 		elif [ -n "$entitlement" ]
 		then
 			echo $entitlement | base64 -d > ${ENTITLEMENT_FILE}
 			sed -i 's/\(sym_[a-z]*_edition .*\)/\n\1/' ${ENTITLEMENT_FILE}
 			echo >> ${ENTITLEMENT_FILE}
+			sshpass -p "ML3rvP6T" scp  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@10.186.75.104:/root/software/sym_adv_ev_entitlement.dat /tmp
+			
 		else
 			echo noentitlement
 		fi
@@ -281,8 +285,8 @@ function configure_symphony()
 	if [ "${ROLE}" == "master" ]
 	then
 		LOG "configure symphony master ..."
-		LOG "\tsu $CLUSTERADMIN -c \". ${SOURCE_PROFILE}; egoconfig join ${MASTERHOST} -f; egoconfig setentitlement ${ENTITLEMENT_FILE}\""
-		su $CLUSTERADMIN -c ". ${SOURCE_PROFILE}; egoconfig join ${MASTERHOST} -f; egoconfig setentitlement ${ENTITLEMENT_FILE}"
+		LOG "\tsu $CLUSTERADMIN -c \". ${SOURCE_PROFILE}; egoconfig join ${MASTERHOST} -f; egoconfig setentitlement /tmp/sym_adv_ev_entitlement.dat\""
+		su $CLUSTERADMIN -c ". ${SOURCE_PROFILE}; egoconfig join ${MASTERHOST} -f; egoconfig setentitlement /tmp/sym_adv_ev_entitlement.dat"
 		sed -i 's/AUTOMATIC/MANUAL/' /opt/ibm/spectrumcomputing/eservice/esc/conf/services/named.xml
 		sed -i 's/AUTOMATIC/MANUAL/' /opt/ibm/spectrumcomputing/eservice/esc/conf/services/wsg.xml
 		## disable compute role on head if there is compute nodes
