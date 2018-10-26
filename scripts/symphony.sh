@@ -229,8 +229,8 @@ function install_symphony()
 		then
 			if [ "$VERSION" == "latest" -o "$VERSION" = "7.2.1.0" -o "$VERSION" == "7.2.0.2"  ]
 			then
-				LOG "\tsh /export/symphony/${VERSION}/symde-7.2.1.0_x86_64.bin --quiet"
-				sh /export/symphony/${VERSION}/symde-7.2.1.0_x86_64.bin --quiet
+				LOG "\tsh /export/symphony/${VERSION}/symeval-7.2.1.0_x86_64.bin --quiet"
+				sh /export/symphony/${VERSION}/symeval-7.2.1.0_x86_64.bin --quiet
 			fi
 		else
 			if [ "${ROLE}" == "compute" ]
@@ -239,12 +239,12 @@ function install_symphony()
 			fi
 			if [ "$VERSION" == "latest" -o "$VERSION" = "7.2.1.0" -o "$VERSION" == "7.2.1.2" ]
 			then
-				LOG "\tsh /export/symphony/${VERSION}/sym-7.2.1.0_x86_64.bin --quiet"
-				sh /export/symphony/${VERSION}/sym-7.2.1.0_x86_64.bin --quiet
+				LOG "\tsh /export/symphony/${VERSION}/symeval-7.2.1.0_x86_64.bin --quiet"
+				sh /export/symphony/${VERSION}/symeval-7.2.1.0_x86_64.bin --quiet
 			elif [ "$VERSION" == "7.1.2" ]
 			then
-				LOG "\tsh /export/symphony/${VERSION}/sym-7.1.2.0_x86_64.bin --quiet"
-				sh /export/symphony/${VERSION}/sym-7.1.2.0_x86_64.bin --quiet
+				LOG "\tsh /export/symphony/${VERSION}/symeval-7.2.1.0_x86_64.bin --quiet"
+				sh /export/symphony/${VERSION}/symeval-7.2.1.0_x86_64.bin --quiet
 			else
 				LOG "\tfailed to install application"
 				echo "... unimplimented version"
