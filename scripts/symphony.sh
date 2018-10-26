@@ -221,6 +221,7 @@ function install_symphony()
 	LOG "installing ${PRODUCT} version ${VERSION} ..."
 	sed -i -e '/7869/d'  -e '/7870/d' -e '/7871/d' /etc/services
 	echo "... trying to install symphony version $VERSION"
+	export IBM_SPECTRUM_SYMPHONY_LICENSE_ACCEPT=Y
 	if [ -d /opt/ibm/spectrumcomputing ]
 	then
 		LOG "bypassing installing $PRODUCT ..."
